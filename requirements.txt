@@ -1,0 +1,23 @@
+# Core LLM API
+groq>=0.11.0
+
+# Vector Embeddings (Runs locally, completely free & fast)
+sentence-transformers>=2.2.0
+
+# Vector Database (Local & Persistent)
+chromadb>=0.4.0
+
+# PDF Extraction (Fast and reliable)
+pymupdf>=1.24.0
+
+# Environment variables & Configuration
+python-dotenv>=1.0.0
+pyyaml>=6.0
+
+# Progress bar
+tqdm>=4.66.0
+
+# Optional API deployment
+fastapi>=0.100.0
+uvicorn>=0.23.0
+

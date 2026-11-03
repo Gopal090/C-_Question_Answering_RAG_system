@@ -1,0 +1,23 @@
+# Environment variables (Never commit secret keys)
+.env
+
+# Vector database storage
+data/
+chroma_db/
+
+# Python cache & virtual environment
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.venv/
+env/
+
+# Logs
+logs/
+*.log
+
+# OS-specific
+.DS_Store
+Thumbs.db
+

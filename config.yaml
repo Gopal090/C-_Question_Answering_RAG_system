@@ -1,0 +1,44 @@
+# ===================================================================
+# RAG Configuration Settings
+# Modify these values to customize your RAG pipeline.
+# ===================================================================
+
+# 1. Document Settings
+data:
+  # Path to the source PDF file
+  pdf_path: "C++ BOOK.pdf"
+  # Directory where ChromaDB stores vectors on disk
+  chroma_db_dir: "data/chroma_db"
+  # Name of the collection inside ChromaDB
+  collection_name: "cpp_textbook"
+
+# 2. Text Splitting / Chunking Settings
+chunking:
+  # Size of each chunk in characters (roughly 150-200 words)
+  chunk_size: 800
+  # Overlap between consecutive chunks to avoid breaking sentences
+  chunk_overlap: 150
+
+# 3. Embedding Model Settings
+embeddings:
+  # Model name from HuggingFace sentence-transformers.
+  # 'all-MiniLM-L6-v2' is fast, lightweight (80MB), and produces high quality 384-dim vectors.
+  model_name: "all-MiniLM-L6-v2"
+  # Batch size when generating embeddings during ingestion
+  batch_size: 64
+
+# 4. Retrieval Settings
+retrieval:
+  # Number of top relevant chunks to retrieve for each user question
+  top_k: 4
+
+# 5. Groq LLM Settings
+llm:
+  # Primary model to use on Groq
+  # 'openai/gpt-oss-120b' provides high-level reasoning and fast inference
+  # Alternative options on your Groq account: 'openai/gpt-oss-20b', 'qwen/qwen3.8-27b'
+  model_name: "openai/gpt-oss-120b"
+  # Sampling temperature (0.0 = deterministic and factual, 1.0 = creative)
+  temperature: 0.2
+  # Maximum tokens in LLM response
+  max_tokens: 1024
